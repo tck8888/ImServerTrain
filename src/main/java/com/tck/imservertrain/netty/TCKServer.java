@@ -18,14 +18,14 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
  */
 
 @Component
-public class WSServer {
+public class TCKServer {
 
-    private static class SingletionWSServer {
-        static final WSServer instance = new WSServer();
+    private static class SingletonTCKServer {
+        static final TCKServer instance = new TCKServer();
     }
 
-    public static WSServer getInstance() {
-        return SingletionWSServer.instance;
+    public static TCKServer getInstance() {
+        return SingletonTCKServer.instance;
     }
 
     private EventLoopGroup mainGroup;
@@ -33,13 +33,13 @@ public class WSServer {
     private ServerBootstrap server;
     private ChannelFuture future;
 
-    public WSServer() {
+    public TCKServer() {
         mainGroup = new NioEventLoopGroup();
         subGroup = new NioEventLoopGroup();
         server = new ServerBootstrap();
         server.group(mainGroup, subGroup)
                 .channel(NioServerSocketChannel.class)
-                .childHandler(new WSServerInitialzer());
+                .childHandler(new TCKServerInitializer());
     }
 
     public void start() {

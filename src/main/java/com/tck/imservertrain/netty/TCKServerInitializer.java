@@ -18,7 +18,7 @@ import io.netty.handler.timeout.IdleStateHandler;
  * @author tck
  * @version 1.0
  */
-public class WSServerInitialzer extends ChannelInitializer<SocketChannel> {
+public class TCKServerInitializer extends ChannelInitializer<SocketChannel> {
 
     @Override
     protected void initChannel(SocketChannel ch) throws Exception {

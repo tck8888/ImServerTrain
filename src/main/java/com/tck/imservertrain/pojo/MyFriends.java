@@ -1,6 +1,7 @@
 package com.tck.imservertrain.pojo;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,6 +12,7 @@ import javax.persistence.Table;
  * @author tck
  * @version 1.0
  */
+@Entity
 @Table(name = "my_friends")
 public class MyFriends {
     @Id
