@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@ComponentScan({"com.tck.imservertrain","org.n3r.idworker"})
 public class ImservertrainApplication {
 
     @Bean

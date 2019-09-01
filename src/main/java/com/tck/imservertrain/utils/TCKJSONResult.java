@@ -7,7 +7,7 @@ package com.tck.imservertrain.utils;
  * @author tck
  * @version 1.0
  */
-public class MyJSONResult {
+public class TCKJSONResult {
     // 响应业务状态
     private Integer status;
 
@@ -19,35 +19,35 @@ public class MyJSONResult {
 
     private String ok;	// 不使用
 
-    public static MyJSONResult build(Integer status, String msg, Object data) {
-        return new MyJSONResult(status, msg, data);
+    public static TCKJSONResult build(Integer status, String msg, Object data) {
+        return new TCKJSONResult(status, msg, data);
     }
 
-    public static MyJSONResult ok(Object data) {
-        return new MyJSONResult(data);
+    public static TCKJSONResult ok(Object data) {
+        return new TCKJSONResult(data);
     }
 
-    public static MyJSONResult ok() {
-        return new MyJSONResult(null);
+    public static TCKJSONResult ok() {
+        return new TCKJSONResult(null);
     }
 
-    public static MyJSONResult errorMsg(String msg) {
-        return new MyJSONResult(500, msg, null);
+    public static TCKJSONResult errorMsg(String msg) {
+        return new TCKJSONResult(500, msg, null);
     }
 
-    public static MyJSONResult errorMap(Object data) {
-        return new MyJSONResult(501, "error", data);
+    public static TCKJSONResult errorMap(Object data) {
+        return new TCKJSONResult(501, "error", data);
     }
 
-    public static MyJSONResult errorTokenMsg(String msg) {
-        return new MyJSONResult(502, msg, null);
+    public static TCKJSONResult errorTokenMsg(String msg) {
+        return new TCKJSONResult(502, msg, null);
     }
 
-    public static MyJSONResult errorException(String msg) {
-        return new MyJSONResult(555, msg, null);
+    public static TCKJSONResult errorException(String msg) {
+        return new TCKJSONResult(555, msg, null);
     }
 
-    public MyJSONResult() {
+    public TCKJSONResult() {
 
     }
 
@@ -55,13 +55,13 @@ public class MyJSONResult {
 //        return new LeeJSONResult(status, msg, null);
 //    }
 
-    public MyJSONResult(Integer status, String msg, Object data) {
+    public TCKJSONResult(Integer status, String msg, Object data) {
         this.status = status;
         this.msg = msg;
         this.data = data;
     }
 
-    public MyJSONResult(Object data) {
+    public TCKJSONResult(Object data) {
         this.status = 200;
         this.msg = "OK";
         this.data = data;
